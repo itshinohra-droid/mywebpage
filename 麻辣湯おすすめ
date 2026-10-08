@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>麻辣湯おすすめ具材の紹介</title>
+<style>
+:root{--bg:#fff7f0;--card:#fff;--text:#3a1f14;--accent:#c8281e;--sub:#7a5446;--line:#f0d9cb;--panel:#fff1e6;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#1d1210;--card:#2a1a16;--text:#f6e6dc;--accent:#ff6b57;--sub:#c9a698;--line:#4a2f27;--panel:#35211c}}
+:root[data-theme="dark"]{--bg:#1d1210;--card:#2a1a16;--text:#f6e6dc;--accent:#ff6b57;--sub:#c9a698;--line:#4a2f27;--panel:#35211c}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--text);font-family:"Hiragino Sans","Noto Sans JP",Meiryo,sans-serif}
+header{background:var(--accent);color:#fff;text-align:center;padding:28px 16px}
+header h1{margin:0;font-size:1.5rem;letter-spacing:.05em}
+main{max-width:560px;margin:0 auto;padding:24px 16px 48px}
+.label{display:inline-block;background:var(--accent);color:#fff;font-weight:700;padding:6px 16px;border-radius:999px;margin-bottom:16px}
+ol{list-style:none;margin:0;padding:0;display:grid;gap:12px}
+li{background:var(--card);border:1px solid var(--line);border-radius:12px;overflow:hidden}
+.row{width:100%;display:flex;align-items:center;gap:12px;padding:16px;background:none;border:0;color:inherit;font:inherit;font-size:1.1rem;font-weight:700;text-align:left;cursor:pointer}
+.num{color:var(--accent);min-width:1.5em}
+.name{flex:1}
+.tog{width:28px;height:28px;border-radius:50%;border:2px solid var(--accent);color:var(--accent);display:grid;place-items:center;font-size:1.2rem;line-height:1;transition:transform .2s}
+.row[aria-expanded="true"] .tog{transform:rotate(45deg)}
+.desc{display:none;padding:14px 16px 16px 52px;background:var(--panel);color:var(--sub);border-top:1px solid var(--line)}
+.row[aria-expanded="true"]+.desc{display:block}
+</style>
+</head>
+<body>
+<header><h1>麻辣湯おすすめ具材の紹介</h1></header>
+<main>
+<div class="label">しのおすすめ4選</div>
+<ol>
+<li><button class="row" aria-expanded="false"><span class="num">1.</span><span class="name">揚げパン</span><span class="tog">+</span></button><div class="desc">しみしみの揚げパンから、じゅわっとスープ</div></li>
+<li><button class="row" aria-expanded="false"><span class="num">2.</span><span class="name">鴨の血</span><span class="tog">+</span></button><div class="desc">くせがなくぷるんと新触感！</div></li>
+<li><button class="row" aria-expanded="false"><span class="num">3.</span><span class="name">汁入り肉団子</span><span class="tog">+</span></button><div class="desc">じゅわっと溢れるお肉のうまみ！</div></li>
+<li><button class="row" aria-expanded="false"><span class="num">4.</span><span class="name">薬膳スープ変更</span><span class="tog">+</span></button><div class="desc">スープカレーのような味わいとスパイス感・滋養強壮</div></li>
+</ol>
+</main>
+<script>
+document.querySelectorAll('.row').forEach(function(b){
+  b.addEventListener('click',function(){
+    b.setAttribute('aria-expanded', b.getAttribute('aria-expanded')==='true' ? 'false' : 'true');
+  });
+});
+</script>
+</body>
+</html>
